@@ -1,0 +1,56 @@
+Question 1
+i)
+
+Fname= input("enter your first name \n")
+Lname= input("enter your last name \n")
+def Full_name(fname,lname):
+    Full_name= fname+ " " +lname
+    return Full_name
+print ("Full_name is " + Full_name(Fname,Lname))
+
+ii)
+
+def string_alternative(str):
+    print(str[0:len(str):2])
+string_alternative(input("enter the text "))
+
+Question 2:
+
+ip_f = open(r"C:\Users\Lakshmi Pranathi\OneDrive\Desktop\Phython Project\Avinash\input.txt", "r")
+op_f = open(r"C:\Users\Lakshmi Pranathi\OneDrive\Desktop\Phython Project\Avinash\output.txt", "w")
+
+content = {}
+
+
+for line in ip_f:
+    op_f.write(line)
+    new_lines = line.split()
+    for x in new_lines:
+        if(content.get(x)==None):
+            content[x]=1
+        else:
+            content[x] = content[x] + 1
+            
+op_f.write("\n Word_Count : \n")
+for key, value in content.items(): 
+        op_f.write('%s:%s\n' % (key, value))
+ip_f.close()
+op_f.close()
+
+Question 3:
+
+
+info = input("enter the given height : ")
+
+def inchToCent(value):
+    return value*2.54
+
+height = info.split()
+
+list = []
+
+for x in height: #using interactive loop
+    value = int(x)
+    list.append(inchToCent(value))#to convert into centimeter
+    
+print("height in inches: ",list)
